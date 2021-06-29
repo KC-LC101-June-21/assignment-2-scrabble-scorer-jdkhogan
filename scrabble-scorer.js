@@ -102,19 +102,19 @@ function scorerPrompt() {
 
 
 function transform(oldPointStructure) {
-  let newPointStructure = {};
+  let out = {};
   let key = "";
 
   for (points in oldPointStructure) {
     for (letter in oldPointStructure[points]) {
       key = oldPointStructure[points][letter].toLowerCase();
-      newPointStructure[key] = Number(points);
+      out[key] = Number(points);
     }
   }
   
-  newPointStructure[' '] = 0;
+  out[' '] = 0;
 
-  return newPointStructure;
+  return out;
 };
 
 
